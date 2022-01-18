@@ -25,20 +25,20 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    console.log(req.body)
-
-    // Create an instance of model SomeModel
-    const newUser = new UserModel({ name: req.body.name, ci: req.body.ci, tel: req.body.tel, address: req.body.address, type: req.body.type });
+    console.log(JSON.stringify(req.body))
+    const newUser = new UserModel({ tel: req.body.tel, name: req.body.name, ci: req.body.ci, address: req.body.address, type: req.body.type });
     try {
+        console.log('new user:' + newUser)
+
         await newUser.save()
         res.send(newUser)
-        console.log(newUser)
     } catch (error) {
         res.send(error)
     }
 })
 
 router.put('/:id', async (req, res) => {
+    console.log('test: put')
 
     try {
         await UserModel.findByIdAndUpdate(req.params.id, req.body)
@@ -46,7 +46,6 @@ router.put('/:id', async (req, res) => {
         res.send(user)
     } catch (error) {
         res.send(error)
-
     }
 })
 

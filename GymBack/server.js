@@ -3,9 +3,14 @@ const express = require('express')
 
 const app = express()
 
+
 const cors = require('cors');
 app.use(cors());
 app.options('*', cors());
+
+app.use(express.json());     
+app.use(express.urlencoded())
+
 
 const db = require('./src/utils/mongodb')
 
