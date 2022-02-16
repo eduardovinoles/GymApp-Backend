@@ -39,12 +39,13 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     console.log('test: put')
-
+    console.log(req.body)
     try {
         await UserModel.findByIdAndUpdate(req.params.id, req.body)
         await UserModel.save()
         res.send(user)
     } catch (error) {
+        console.error(error)
         res.send(error)
     }
 })
