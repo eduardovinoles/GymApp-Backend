@@ -8,10 +8,6 @@ var userSchema = new Schema({
         type: String,
         required: true,
     } ,
-    img: {
-        data: Buffer,
-        contentType: String
-    },
     ci: {
         type: String,
         required: true,

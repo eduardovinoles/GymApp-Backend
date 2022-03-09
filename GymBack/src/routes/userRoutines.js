@@ -25,7 +25,7 @@ router.get('/:ci', async (req, res) => {
 
 router.post('/', async (req, res) => {
 
-    // Create an instance of model SomeModel
+    
     const newUserRoutine = new RoutineModel({  ci: req.body.ci, monday: req.body.monday, tuesday: req.body.tuesday, wednesday: req.body.wednesday, thursday: req.body.thursday, friday: req.body.friday, saturday: req.body.saturday, sunday: req.body.sunday  });
     try {
         await newUserRoutine.save()

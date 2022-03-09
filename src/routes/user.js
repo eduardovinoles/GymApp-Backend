@@ -21,12 +21,12 @@ router.get('/:id', async (req, res) => {
         res.send(user)
     } catch (error) {
         res.send(error)
-    }b 
+    }
 })
 
 router.post('/', async (req, res) => {
     console.log(JSON.stringify(req.body))
-    const newUser = new UserModel({ tel: req.body.tel, name: req.body.name, img:req.body.img, ci: req.body.ci, address: req.body.address, type: req.body.type });
+    const newUser = new UserModel({ tel: req.body.tel, name: req.body.name, ci: req.body.ci, address: req.body.address, type: req.body.type });
     try {
         console.log('new user:' + newUser)
 
@@ -41,10 +41,11 @@ router.put('/:id', async (req, res) => {
     console.log('test: put')
     console.log(req.body)
     try {
-        await UserModel.findByIdAndUpdate(req.params.id, req.body)
-        await UserModel.save()
-        res.send(user)
+        let response = await UserModel.findByIdAndUpdate(req.params.id, req.body)
+        console.log(response)
+        res.send(response)
     } catch (error) {
+        console.error(error)
         res.send(error)
     }
 })
