@@ -17,7 +17,10 @@ var userSchema = new Schema({
     type: {
         type: String,
         required: true,
-    } 
+    },
+    medicalCare: String,
+    birthDate: String,
+    notes: String
 });
 
 // Compile model from schema

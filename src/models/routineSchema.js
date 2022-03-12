@@ -4,10 +4,11 @@ var Schema = mongoose.Schema;
 
 
 var routineSchema = new Schema({
-    ci: {
-        type: Number,
+    id: {
+        type: String,
         required: true
-    } ,
+    },
+    lastActiveAt: Date, 
     monday: String,
     tuesday: String,
     wednesday: String,

@@ -26,7 +26,9 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     console.log(JSON.stringify(req.body))
-    const newUser = new UserModel({ tel: req.body.tel, name: req.body.name, ci: req.body.ci, address: req.body.address, type: req.body.type });
+    const newUser = new UserModel({ tel: req.body.tel, name: req.body.name, ci: req.body.ci,
+         address: req.body.address, type: req.body.type, medicalCare: req.body.medicalCare,
+        birthDate: req.body.birthDate, notes: req.body.notes });
     try {
         console.log('new user:' + newUser)
 
