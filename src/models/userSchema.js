@@ -20,7 +20,11 @@ var userSchema = new Schema({
     },
     medicalCare: String,
     birthDate: String,
-    notes: String
+    notes: String,
+    active: {
+        type: Boolean,
+        required: true
+    }
 });
 
 // Compile model from schema
