@@ -7,7 +7,7 @@ const RoutineModel = require('../models/routineSchema')
 
 router.get('/', async (req, res) => {
 
-  
+  /* 
         try {
             const newUserRoutine = new RoutineModel({ name: "edu",
             exercises: [{
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         } catch (error) {
             res.send(error)
         }
-
+ */
 
 
 
