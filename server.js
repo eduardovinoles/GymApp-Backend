@@ -16,7 +16,7 @@ app.use(express.json());
 const user = require("./src/routes/user");
 app.use("/user", user);
 
-const routines = require("./src/routes/routines");
+const routines = require("./src/routes/userRoutines");
 app.use("/routines", routines);
 
 app.listen(process.env.PORT || 80, () => {
