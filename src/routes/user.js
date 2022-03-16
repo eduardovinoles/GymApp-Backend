@@ -3,15 +3,21 @@ var express = require('express');
 var router = express.Router();
 
 const UserModel = require('../models/userSchema')
+const RoutineModel = require('../models/routineSchema')
 
 router.get('/', async (req, res) => {
 
-    const newUserRoutine = new RoutineModel({ name: "edu",
-        exercises: [{
-            name: "gluteos",
-            muscleGroup: "abc" }]});
-
-        await newUserRoutine.save()
+  
+        try {
+            const newUserRoutine = new RoutineModel({ name: "edu",
+            exercises: [{
+                name: "gluteos",
+                muscleGroup: "abc" }]});
+    
+            await newUserRoutine.save()
+        } catch (error) {
+            res.send(error)
+        }
 
 
 
