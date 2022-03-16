@@ -1,21 +1,14 @@
-trainingSesion
-    client (reference to clients)
-    date date
-    excercise string (reference to excercises)
-    series int
-    repetitions int */
-
-    var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
 
 var exerciseSchema = new Schema({
-    name: String,
-    exercises: [{
-        name: String,
-        muscleGroup: String
-    }]
+    clientId: Schema.ObjectId,
+    date: Date,
+    exercise: String,
+    series: Number,
+    repetitions: Number
 });
 
 // Compile model from schema
