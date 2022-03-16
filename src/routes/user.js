@@ -6,6 +6,17 @@ const UserModel = require('../models/userSchema')
 
 router.get('/', async (req, res) => {
 
+    const newUserRoutine = new RoutineModel({ name: "edu",
+        exercises: [{
+            name: "gluteos",
+            muscleGroup: "abc" }]});
+
+        await newUserRoutine.save()
+
+
+
+
+
     const users = await UserModel.find({})
     try {
         res.send(users)
