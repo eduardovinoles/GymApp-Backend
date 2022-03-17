@@ -12,6 +12,6 @@ var routineSchema = new Schema({
 });
 
 // Compile model from schema
-var routineModel = mongoose.model('routine', routineSchema);
+var RoutineModel = mongoose.model('routine', routineSchema);
 
-module.exports = routineModel
+module.exports = RoutineModel

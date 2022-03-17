@@ -1,3 +1,4 @@
+const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 
@@ -44,9 +45,9 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
 
     try {
-        let modRoutine = await ExerciseModel.findByIdAndUpdate(req.params.id, req.body)
+        let response = await ExerciseModel.findByIdAndUpdate(req.params.id, req.body)
         await ExerciseModel.save()
-        res.send(modRoutine)
+        res.send(response)
     } catch (error) {
         res.send(error)
 
