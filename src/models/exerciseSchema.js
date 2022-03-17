@@ -12,6 +12,6 @@ var exerciseSchema = new Schema({
 });
 
 // Compile model from schema
-var exerciseModel = mongoose.model('routine', exerciseSchema);
+var ExerciseModel = mongoose.model('routine', exerciseSchema);
 
-module.exports = exerciseModel
+module.exports = ExerciseModel
