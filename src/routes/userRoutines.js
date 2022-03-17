@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-const RoutineModel = require('../models/routineSchema')
+const exerciseModel = require('../models/exerciseSchema')
 
 router.get('/', async (req, res) => {
 
-    const routine = await RoutineModel.find({})
+    const routine = await exerciseModel.find({})
     try {
         res.send(routine)
     } catch (error) {
@@ -13,9 +13,9 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:ci', async (req, res) => {
+router.get('/:id', async (req, res) => {
 
-    const user = await RoutineModel.findById(req.params.ci)
+    const userRoutine = await exerciseModel.findById(req.params.id)
     try {
         res.send(userRoutine)
     } catch (error) {
@@ -25,32 +25,37 @@ router.get('/:ci', async (req, res) => {
 
 router.post('/', async (req, res) => {
 
-    const newUserRoutine = new RoutineModel({  ci: req.body.ci, monday: req.body.monday, tuesday: req.body.tuesday, wednesday: req.body.wednesday, thursday: req.body.thursday, friday: req.body.friday, saturday: req.body.saturday, sunday: req.body.sunday  });
+    const newUserExercise = new exerciseModel({
+        clientId: req.body.id,
+        date: req.body.date,
+        exercise: req.body.exercise,
+        series: req.body.series,
+        repetitions: req.body.repetitions 
+    });
     try {
-        await newUserRoutine.save()
-        res.send(newUserRoutine)
-        console.log(newUserRoutine)
+        await newUserExercise.save()
+        res.send(newUserExercise)
+        console.log(newUserExercise)
     } catch (error) {
         res.send(error)
     }
 })
 
-router.put('/:ci', async (req, res) => {
+router.put('/:id', async (req, res) => {
 
     try {
-        await RoutineModel.findByIdAndUpdate(req.params.ci, req.body)
-        await RoutineModel.save()
+        let modRoutine = await exerciseModel.findByIdAndUpdate(req.params.id, req.body)
+        await exerciseModel.save()
         res.send(modRoutine)
     } catch (error) {
         res.send(error)
-
     }
 })
 
-router.delete('/:ci', async (req, res) => {
+router.delete('/:id', async (req, res) => {
 
     try {
-        const routine = await RoutineModel.findByIdAndDelete(req.params.ci)
+        const routine = await exerciseModel.findByIdAndDelete(req.params.id)
 
         if (!routine) res.status(404).send("No routine found")
         res.status(200).send()
