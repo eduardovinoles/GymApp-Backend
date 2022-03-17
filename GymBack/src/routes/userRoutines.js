@@ -1,11 +1,12 @@
+const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 
-const ExerciseModel = require('../models/exerciseSchema')
+const exerciseModel = require('../models/exerciseSchema')
 
 router.get('/', async (req, res) => {
 
-    const routine = await ExerciseModel.find({})
+    const routine = await exerciseModel.find({})
     try {
         res.send(routine)
     } catch (error) {
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
 
-    const userRoutine = await ExerciseModel.findById(req.params.id)
+    const userRoutine = await exerciseModel.findById(req.params.id)
     try {
         res.send(userRoutine)
     } catch (error) {
@@ -25,7 +26,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
 
-    const newUserExercise = new ExerciseModel({
+    const newUserExercise = new exerciseModel({
         clientId: req.body.id,
         date: req.body.date,
         exercise: req.body.exercise,
@@ -44,9 +45,9 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
 
     try {
-        let modRoutine = await ExerciseModel.findByIdAndUpdate(req.params.id, req.body)
-        await ExerciseModel.save()
-        res.send(modRoutine)
+        let response = await exerciseModel.findByIdAndUpdate(req.params.id, req.body)
+        await exerciseModel.save()
+        res.send(response)
     } catch (error) {
         res.send(error)
 
@@ -56,7 +57,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
 
     try {
-        const routine = await ExerciseModel.findByIdAndDelete(req.params.id)
+        const routine = await exerciseModel.findByIdAndDelete(req.params.id)
 
         if (!routine) res.status(404).send("No routine found")
         res.status(200).send()
