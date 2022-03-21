@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 
 var exerciseSchema = new Schema({
-    clientId: { type: Number, index: true },
+    clientId: { type: String, index: true },
     date: Date,
     exercise: String,
     series: Number,
