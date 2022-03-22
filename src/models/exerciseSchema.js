@@ -1,10 +1,11 @@
+const { ObjectId } = require('mongodb');
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
 
 var exerciseSchema = new Schema({
-    clientId: { type: String, index: true },
+    _id: ObjectId,
     date: Date,
     exercise: String,
     series: Number,
