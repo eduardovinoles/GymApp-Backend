@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
 
-    const userRoutine = await ExerciseModel.findById(req.params.id)
+    const userRoutine = await ExerciseModel.findById(req.params.clientId)
     try {
         res.send(userRoutine)
     } catch (error) {
