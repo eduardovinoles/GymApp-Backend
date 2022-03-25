@@ -8,7 +8,7 @@ const RoutineModel = require('../models/routineSchema')
 router.get('/', async (req, res) => {
 
    
-        try {
+    /*     try {
             const newUserRoutine = new RoutineModel({ name: "training1",
             exercises: [
                 {
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
             await newUserRoutine.save()
         } catch (error) {
             res.send(error)
-        }
+        } */
  
 
 

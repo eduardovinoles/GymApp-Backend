@@ -19,6 +19,9 @@ app.use("/user", user);
 const routines = require("./src/routes/userRoutines");
 app.use("/routines", routines);
 
+const dayRoutine = require("./src/routes/dayRoutine");
+app.use("/dayroutine", dayRoutine);
+
 app.listen(process.env.PORT || 80, () => {
    console.log("Server on port 3000");
 });
