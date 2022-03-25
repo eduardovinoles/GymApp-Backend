@@ -7,18 +7,24 @@ const RoutineModel = require('../models/routineSchema')
 
 router.get('/', async (req, res) => {
 
-  /* 
+   
         try {
-            const newUserRoutine = new RoutineModel({ name: "edu",
-            exercises: [{
-                name: "gluteos",
-                muscleGroup: "abc" }]});
+            const newUserRoutine = new RoutineModel({ name: "training1",
+            exercises: [
+                {
+                    name: "gluteos",
+                    muscleGroup: "abc" 
+                },
+                {
+                    name: "pecho",
+                    muscleGroup: "abc" }
+                ]});
     
             await newUserRoutine.save()
         } catch (error) {
             res.send(error)
         }
- */
+ 
 
 
 
