@@ -7,24 +7,59 @@ const RoutineModel = require('../models/routineSchema')
 
 router.get('/', async (req, res) => {
 
-   
-    /*     try {
-            const newUserRoutine = new RoutineModel({ name: "training1",
+
+    try {
+        const newUserRoutine = new RoutineModel({
+            name: "training1",
+            day: "Monday training",
             exercises: [
                 {
-                    name: "gluteos",
-                    muscleGroup: "abc" 
+                    name: "Lateral Raises",
+                    muscleGroup: "Shoulders",
+                    reps: 3,
+                    sets: 12,
+                    rest: 30
                 },
                 {
-                    name: "pecho",
-                    muscleGroup: "abc" }
-                ]});
-    
-            await newUserRoutine.save()
-        } catch (error) {
-            res.send(error)
-        } */
- 
+                    name: "Front Raises",
+                    muscleGroup: "Shoulders",
+                    reps: 3,
+                    sets: 12,
+                    rest: 30
+                },
+                {
+                    name: "Front Lunges",
+                    muscleGroup: "Quads & Gluteus",
+                    reps: 3,
+                    sets: 12,
+                    rest: 60
+                },
+                {
+                    name: "Squats",
+                    muscleGroup: "Quads & Gluteus",
+                    reps: 3,
+                    sets: 12,
+                    rest: 60
+                },
+                {
+                    name: "Ankle Crunches",
+                    muscleGroup: "Abdominals",
+                    reps: 3,
+                    sets: 30,
+                    rest: 10
+                },
+
+
+            ]
+        });
+
+        await newUserRoutine.save()
+    } catch (error) {
+        res.send(error)
+    }
+
+   
+
 
 
 
@@ -49,9 +84,11 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     console.log(JSON.stringify(req.body))
-    const newUser = new UserModel({ tel: req.body.tel, name: req.body.name, ci: req.body.ci,
-         address: req.body.address, type: req.body.type, medicalCare: req.body.medicalCare,
-        birthDate: req.body.birthDate, notes: req.body.notes, active: req.body.active });
+    const newUser = new UserModel({
+        tel: req.body.tel, name: req.body.name, ci: req.body.ci,
+        address: req.body.address, type: req.body.type, medicalCare: req.body.medicalCare,
+        birthDate: req.body.birthDate, notes: req.body.notes, active: req.body.active
+    });
     try {
         console.log('new user:' + newUser)
 
