@@ -6,9 +6,13 @@ var Schema = mongoose.Schema;
 var exerciseSchema = new Schema({
     clientId: { type: String, index: true },
     date: Date,
-    exercise: String,
-    series: Number,
-    repetitions: Number
+    exercises: [{
+        name: String,
+        muscleGroup: String,
+        reps: String,
+        sets: String,
+        rest: String
+    }]
 });
 
 // Compile model from schema
