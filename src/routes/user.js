@@ -10,36 +10,36 @@ router.get('/', async (req, res) => {
 
     try {
         const newUserRoutine = new RoutineModel({
-            name: "training 2",
-            day: "Tuesday training",
+            name: "training 3",
+            day: "Wednesday training",
             exercises: [
                 {
-                    name: "Flyes",
-                    muscleGroup: "Chest",
+                    name: "Push-ups",
+                    muscleGroup: "Entire upper body",
                     reps: 3,
-                    sets: 12,
+                    sets: 20,
                     rest: 30
                 },
                 {
-                    name: "Chest Press",
-                    muscleGroup: "Chest",
-                    reps: 3,
-                    sets: 12,
-                    rest: 30
-                },
-                {
-                    name: "Triceps Kickback",
-                    muscleGroup: "Triceps",
-                    reps: 3,
-                    sets: 12,
-                    rest: 60
-                },
-                {
-                    name: "Dips",
-                    muscleGroup: "Triceps",
+                    name: "Reverse leg curls",
+                    muscleGroup: "Gluteus",
                     reps: 3,
                     sets: 15,
-                    rest: 45
+                    rest: 30
+                },
+                {
+                    name: "Alternating Leg Raises",
+                    muscleGroup: "Abs",
+                    reps: 2,
+                    sets: 30,
+                    rest: 30
+                },
+                {
+                    name: "Twist & Slot",
+                    muscleGroup: "Abs/Obliqs",
+                    reps: 2,
+                    sets: 30,
+                    rest: 30
                 },
                 {
                     name: "Interval Training",
@@ -59,10 +59,12 @@ router.get('/', async (req, res) => {
     }
 
    
-    let training2 = {
-        title: "Tuesday training",
-        
-        row4: { exercise: "Dips", muscle: "Triceps", reps: 3, sets: 15, rest: 45 },
+    let training3 = {
+        title: "Wednesday training",
+        row1: { exercise: "Push-ups", muscle: "Entire upper body", reps: 3, sets: 20, rest: 30 },
+        row2: { exercise: "Reverse leg curls", muscle: "Gluteus", reps: 3, sets: 15, rest: 30 },
+        row3: { exercise: "Alternating Leg Raises", muscle: "Abs", reps: 2, sets: 30, rest: 30 },
+        row4: { exercise: "Twist & Slot", muscle: "Abs/Obliqs", reps: 2, sets: 30, rest: 30 },
         row5: { exercise: "Interval Training", muscle: "", reps: 0, sets: 0, rest: 0 }
     }
 
