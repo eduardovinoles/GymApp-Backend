@@ -10,36 +10,36 @@ router.get('/', async (req, res) => {
 
     try {
         const newUserRoutine = new RoutineModel({
-            name: "training 5",
-            day: "Friday training",
+            name: "training 6",
+            day: "Saturday training",
             exercises: [
                 {
-                    name: "Stiff-Leg Deadlifts",
-                    muscleGroup: "Armstrings",
+                    name: "Standing Calve Raises",
+                    muscleGroup: "Calf",
                     reps: 3,
-                    sets: 12,
-                    rest: 60
+                    sets: 15,
+                    rest: 15
                 },
                 {
-                    name: "Step-up",
-                    muscleGroup: "Arms & Quads",
+                    name: "Seated Calve Raises",
+                    muscleGroup: "Calf",
                     reps: 3,
-                    sets: 12,
-                    rest: 60
+                    sets: 15,
+                    rest: 15
                 },
                 {
-                    name: "Push Throughs",
-                    muscleGroup: "Abs",
-                    reps: 3,
-                    sets: 30,
-                    rest: 30
+                    name: "Interval Training",
+                    muscleGroup: "",
+                    reps: 0,
+                    sets: 0,
+                    rest: 0
                 },
                 {
-                    name: "Reverse Crunch",
-                    muscleGroup: "Abs",
-                    reps: 3,
-                    sets: 30,
-                    rest: 30
+                    name: "Interval Training",
+                    muscleGroup: "",
+                    reps: 0,
+                    sets: 0,
+                    rest: 0
                 },
                 {
                     name: "Interval Training",
@@ -59,7 +59,14 @@ router.get('/', async (req, res) => {
     }
 
    
-   
+    let training6 = {
+        title: "Saturday training",
+        row1: { exercise: "Standing Calve Raises", muscle: "Calf", reps: 3, sets: 15, rest: 15 },
+        row2: { exercise: "Seated Calve Raises", muscle: "Calf", reps: 3, sets: 15, rest: 15 },
+        row3: { exercise: "Interval Training", muscle: "", reps: 0, sets: 0, rest: 0 },
+        row4: { exercise: "", muscle: "", reps: 0, sets: 0, rest: 0 },
+        row5: { exercise: "", muscle: "", reps: 0, sets: 0, rest: 0 }
+    }
 
 
 
