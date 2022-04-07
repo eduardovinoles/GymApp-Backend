@@ -8,7 +8,7 @@ const RoutineModel = require('../models/routineSchema')
 router.get('/', async (req, res) => {
 
 
-    try {
+/*     try {
         const newUserRoutine = new RoutineModel({
             name: "training 6",
             day: "Saturday training",
@@ -56,17 +56,9 @@ router.get('/', async (req, res) => {
         await newUserRoutine.save()
     } catch (error) {
         res.send(error)
-    }
+    } */
 
    
-    let training6 = {
-        title: "Saturday training",
-        row1: { exercise: "Standing Calve Raises", muscle: "Calf", reps: 3, sets: 15, rest: 15 },
-        row2: { exercise: "Seated Calve Raises", muscle: "Calf", reps: 3, sets: 15, rest: 15 },
-        row3: { exercise: "Interval Training", muscle: "", reps: 0, sets: 0, rest: 0 },
-        row4: { exercise: "", muscle: "", reps: 0, sets: 0, rest: 0 },
-        row5: { exercise: "", muscle: "", reps: 0, sets: 0, rest: 0 }
-    }
 
 
 
