@@ -10,36 +10,36 @@ router.get('/', async (req, res) => {
 
     try {
         const newUserRoutine = new RoutineModel({
-            name: "training 4",
-            day: "Thursday training",
+            name: "training 5",
+            day: "Friday training",
             exercises: [
                 {
-                    name: "Hammer curls",
-                    muscleGroup: "Biceps",
+                    name: "Stiff-Leg Deadlifts",
+                    muscleGroup: "Armstrings",
                     reps: 3,
                     sets: 12,
+                    rest: 60
+                },
+                {
+                    name: "Step-up",
+                    muscleGroup: "Arms & Quads",
+                    reps: 3,
+                    sets: 12,
+                    rest: 60
+                },
+                {
+                    name: "Push Throughs",
+                    muscleGroup: "Abs",
+                    reps: 3,
+                    sets: 30,
                     rest: 30
                 },
                 {
-                    name: "Bicep Curls",
-                    muscleGroup: "Biceps",
+                    name: "Reverse Crunch",
+                    muscleGroup: "Abs",
                     reps: 3,
-                    sets: 15,
+                    sets: 30,
                     rest: 30
-                },
-                {
-                    name: "One Arm Rows",
-                    muscleGroup: "Backs",
-                    reps: 3,
-                    sets: 12,
-                    rest: 45
-                },
-                {
-                    name: "Bent Over Rows",
-                    muscleGroup: "Back",
-                    reps: 3,
-                    sets: 12,
-                    rest: 45
                 },
                 {
                     name: "Interval Training",
