@@ -10,36 +10,36 @@ router.get('/', async (req, res) => {
 
     try {
         const newUserRoutine = new RoutineModel({
-            name: "training 3",
-            day: "Wednesday training",
+            name: "training 4",
+            day: "Thursday training",
             exercises: [
                 {
-                    name: "Push-ups",
-                    muscleGroup: "Entire upper body",
+                    name: "Hammer curls",
+                    muscleGroup: "Biceps",
                     reps: 3,
-                    sets: 20,
+                    sets: 12,
                     rest: 30
                 },
                 {
-                    name: "Reverse leg curls",
-                    muscleGroup: "Gluteus",
+                    name: "Bicep Curls",
+                    muscleGroup: "Biceps",
                     reps: 3,
                     sets: 15,
                     rest: 30
                 },
                 {
-                    name: "Alternating Leg Raises",
-                    muscleGroup: "Abs",
-                    reps: 2,
-                    sets: 30,
-                    rest: 30
+                    name: "One Arm Rows",
+                    muscleGroup: "Backs",
+                    reps: 3,
+                    sets: 12,
+                    rest: 45
                 },
                 {
-                    name: "Twist & Slot",
-                    muscleGroup: "Abs/Obliqs",
-                    reps: 2,
-                    sets: 30,
-                    rest: 30
+                    name: "Bent Over Rows",
+                    muscleGroup: "Back",
+                    reps: 3,
+                    sets: 12,
+                    rest: 45
                 },
                 {
                     name: "Interval Training",
@@ -59,15 +59,7 @@ router.get('/', async (req, res) => {
     }
 
    
-    let training3 = {
-        title: "Wednesday training",
-        row1: { exercise: "Push-ups", muscle: "Entire upper body", reps: 3, sets: 20, rest: 30 },
-        row2: { exercise: "Reverse leg curls", muscle: "Gluteus", reps: 3, sets: 15, rest: 30 },
-        row3: { exercise: "Alternating Leg Raises", muscle: "Abs", reps: 2, sets: 30, rest: 30 },
-        row4: { exercise: "Twist & Slot", muscle: "Abs/Obliqs", reps: 2, sets: 30, rest: 30 },
-        row5: { exercise: "Interval Training", muscle: "", reps: 0, sets: 0, rest: 0 }
-    }
-
+   
 
 
 
