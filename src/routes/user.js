@@ -10,43 +10,43 @@ router.get('/', async (req, res) => {
 
     try {
         const newUserRoutine = new RoutineModel({
-            name: "training1",
-            day: "Monday training",
+            name: "training 2",
+            day: "Tuesday training",
             exercises: [
                 {
-                    name: "Lateral Raises",
-                    muscleGroup: "Shoulders",
+                    name: "Flyes",
+                    muscleGroup: "Chest",
                     reps: 3,
                     sets: 12,
                     rest: 30
                 },
                 {
-                    name: "Front Raises",
-                    muscleGroup: "Shoulders",
+                    name: "Chest Press",
+                    muscleGroup: "Chest",
                     reps: 3,
                     sets: 12,
                     rest: 30
                 },
                 {
-                    name: "Front Lunges",
-                    muscleGroup: "Quads & Gluteus",
+                    name: "Triceps Kickback",
+                    muscleGroup: "Triceps",
                     reps: 3,
                     sets: 12,
                     rest: 60
                 },
                 {
-                    name: "Squats",
-                    muscleGroup: "Quads & Gluteus",
+                    name: "Dips",
+                    muscleGroup: "Triceps",
                     reps: 3,
-                    sets: 12,
-                    rest: 60
+                    sets: 15,
+                    rest: 45
                 },
                 {
-                    name: "Ankle Crunches",
-                    muscleGroup: "Abdominals",
-                    reps: 3,
-                    sets: 30,
-                    rest: 10
+                    name: "Interval Training",
+                    muscleGroup: "",
+                    reps: 0,
+                    sets: 0,
+                    rest: 0
                 },
 
 
@@ -59,7 +59,12 @@ router.get('/', async (req, res) => {
     }
 
    
-
+    let training2 = {
+        title: "Tuesday training",
+        
+        row4: { exercise: "Dips", muscle: "Triceps", reps: 3, sets: 15, rest: 45 },
+        row5: { exercise: "Interval Training", muscle: "", reps: 0, sets: 0, rest: 0 }
+    }
 
 
 
