@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var exerciseSchema = new Schema({
     clientId: { type: String, index: true },
     date: Date,
+    name: String,
     exercises: [{
         name: String,
         muscleGroup: String,
