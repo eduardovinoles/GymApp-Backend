@@ -26,18 +26,16 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const userExercise = req.body
-  /*   const newUserExercise = new ExerciseModel({
+     const newUserExercise = new ExerciseModel({
         clientId: req.body.clientId,
         date: req.body.date,
-        exercise: req.body.exercise,
-        series: req.body.series,
-        repetitions: req.body.repetitions 
-    }); */
+        name: req.body.name,
+        exercises: req.body.exercises 
+    }); 
     try {
-        //await newUserExercise.save()
-        ExerciseModel.insertMany(userExercise)
+        await newUserExercise.save()
         res.send(userExercise)
-        console.log(userExercise)
+        
     } catch (error) {
         res.send(error)
     }
