@@ -7,6 +7,7 @@ var exerciseSchema = new Schema({
     clientId: { type: String, index: true },
     date: Date,
     name: String,
+    day: String,
     exercises: [{
         name: String,
         muscleGroup: String,

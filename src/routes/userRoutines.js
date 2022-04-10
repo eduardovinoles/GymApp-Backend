@@ -30,6 +30,7 @@ router.post('/', async (req, res) => {
         clientId: req.body.clientId,
         date: req.body.date,
         name: req.body.name,
+        day: req.body.day,
         exercises: req.body.exercises 
     }); 
     try {
