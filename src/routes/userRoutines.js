@@ -27,7 +27,7 @@ router.get('/:clientId', async (req, res) => {
 router.post('/', async (req, res) => {
     const userExercise = req.body
      const newUserExercise = new ExerciseModel({
-        _clientId: req.body.clientId,
+        clientId: req.body.clientId,
         date: req.body.date,
         name: req.body.name,
         day: req.body.day,
