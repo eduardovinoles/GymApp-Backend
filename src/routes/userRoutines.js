@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/:clientId', async (req, res) => {
 
     const userRoutine = await ExerciseModel.findById(req.params.clientId)
     try {
