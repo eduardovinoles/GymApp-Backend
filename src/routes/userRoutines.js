@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:clientId', async (req, res) => {
 
-    const userRoutine = await ExerciseModel.findById(req.params.clientId)
+    const userRoutine = await ExerciseModel.find({clientId: req.params.clientId})
     console.log("userRoutine",userRoutine)
     try {
         res.send(userRoutine)
