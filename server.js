@@ -13,6 +13,9 @@ const db = require("./src/utils/mongodb");
 
 app.use(express.json());
 
+const login = require("./src/routes/login");
+app.use("/login", login);
+
 const user = require("./src/routes/user");
 app.use("/user", user);
 
