@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 
-router.get('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     res.send({
         token: 'test123'
       });
