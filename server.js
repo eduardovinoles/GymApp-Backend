@@ -1,5 +1,4 @@
 const express = require("express");
-const morgan = require("morgan")
 const app = express();
 
 const cors = require("cors");
@@ -12,8 +11,6 @@ app.use(express.urlencoded());
 const db = require("./src/utils/mongodb");
 
 app.use(express.json());
-
-app.use(morgan("dev"))
 
 const login = require("./src/routes/login");
 app.use("/login", login);
