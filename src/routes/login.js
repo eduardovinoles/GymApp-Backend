@@ -3,10 +3,8 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/login', (req, res) => {
-   
-        res.send({
-            token: 'test123'
-          });
-        })
+const token =  {token: 'test123'}
+    res.send(token);
+})
 
 module.exports = router;
