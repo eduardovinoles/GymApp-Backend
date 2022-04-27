@@ -2,8 +2,9 @@ const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 
-router.post('/login', (req, res) => {
-const token =  {token: 'test123'}
+router.post('/', (req, res) => {
+    console.log(JSON.stringify(req.body))
+    const token = { token: 'test123' }
     res.send(token);
 })
 
