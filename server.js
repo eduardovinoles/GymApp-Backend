@@ -1,5 +1,5 @@
 const express = require("express");
-
+const morgan = require("morgan")
 const app = express();
 
 const cors = require("cors");
@@ -13,11 +13,10 @@ const db = require("./src/utils/mongodb");
 
 app.use(express.json());
 
-app.use('/login', (req, res) => {
-   res.send({
-     token: 'test123'
-   });
- });
+app.use(morgan("dev"))
+
+const login = require("./src/routes/login");
+app.use("/login", login);
 
 const user = require("./src/routes/user");
 app.use("/user", user);
